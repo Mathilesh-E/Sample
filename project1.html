@@ -1,0 +1,416 @@
+Here's your updated code with the "About" section content you provided earlier integrated into the HTML structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committee Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333333;
+            color: #fff;
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header ul li {
+            margin: 0 15px;
+        }
+
+        header ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header ul li a:hover {
+            color: #00bcd4;
+        }
+
+        header .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
+
+        #home {
+            background: linear-gradient(to right, #e8f5e9,  #e8f5e9);
+            color: black;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        #home img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #about {
+            background: #e8f5e9;
+        }
+
+        #about .about-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #about .about-header h1 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+
+        #about .about-header hr {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #about .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #about .about-content p {
+            font-size: 1.2rem;
+            text-align: justify;
+            line-height: 1.8;
+            padding-top: 5px;
+        }
+
+        #patrons {
+            background: #e3f2fd;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #patrons h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .chief-patron {
+            margin-bottom: 50px;
+        }
+
+        .chief-patron img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .chief-patron h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .chief-patron p {
+            font-size: 1.2rem;
+        }
+
+        .patrons-slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .patron-card {
+            min-width: 240px;
+            margin: 0 10px;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            flex-shrink: 0;
+            transition: transform 0.5s;
+        }
+
+        .patron-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .patron-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .patron-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        #important-dates {
+            background: #ede7f6;
+        }
+
+        #keynote-speakers {
+            background: #fff8e1;
+        }
+
+        #contact {
+            background: #ffebee;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            header ul.active {
+                display: flex;
+            }
+
+            header .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Committee Name</h1>
+            <div class="menu-toggle">☰</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#patrons">Patrons</a></li>
+                <li><a href="#important-dates">Important Dates</a></li>
+                <li><a href="#keynote-speakers">Keynote Speakers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>7th International Conference on Recent Trends in Advanced Computing (ICRTAC'24)</h2>
+        <p><strong>Theme:</strong> Automating Sustainability - Bridging SDG Goals with Recent Trends in Advanced
+            Computing</p>
+        <p><strong>Organized By:</strong></p>
+        <p>School of Computer Science and Engineering (SCOPE), Vellore Institute of Technology, Chennai, India</p>
+        <p><strong>In Association With:</strong></p>
+        <p>Faculty of Computer Science and Information Technology (FSKTM), Universiti Putra Malaysia (UPM), Malaysia</p>
+        <p>Bureau of Indian Standards &</p>
+        <p>UiPath Academic Alliance</p>
+        <img src="https://via.placeholder.com/800x400" alt="Conference Banner">
+    </section>
+
+    <section id="about">
+        <div class="about-header">
+            <h1>About</h1>
+            <hr>
+        </div>
+        <div class="about-content">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                fringilla vel, aliquet nec, vulputate eget, arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+                eget, arcu.</p>
+        </div>
+
+        <div style="margin: 20px 0px;"></div>
+
+        <div class="about-header">
+            <h1>About-2</h1>
+            <hr>
+        </div>
+        <div class="about-content">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                fringilla vel, aliquet nec, vulputate eget, arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+                eget, arcu.</p>
+        </div>
+
+        <div style="margin: 20px 0px;"></div>
+
+        <div class="about-header">
+            <h1>About-3</h1>
+            <hr>
+        </div>
+        <div class="about-content">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+                fringilla vel, aliquet nec, vulputate eget, arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+                eget, arcu.</p>
+        </div>
+    </section>
+
+    <section id="patrons">
+        <h2>Patrons</h2>
+        <div class="chief-patron">
+            <img src="https://via.placeholder.com/150" alt="Chief Patron">
+            <h3>Chief Patron</h3>
+            <p>Dr. Chief Patron Name</p>
+        </div>
+
+        <div class="patrons-slider" id="patrons-slider">
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 1">
+                <h4>Patron 1</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 2">
+                <h4>Patron 2</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 3">
+                <h4>Patron 3</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 4">
+                <h4>Patron 4</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 5">
+                <h4>Patron 5</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 6">
+                <h4>Patron 6</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 7">
+                <h4>Patron 7</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 8">
+                <h4>Patron 8</h4>
+                <p>Designation</p>
+            </div>
+            <div class="patron-card">
+                <img src="https://via.placeholder.com/100" alt="Patron 9">
+                <h4>Patron 9</h4>
+                <p>Designation</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="important-dates">
+        <h2>Important Dates</h2>
+        <p>Event timelines or deadlines.</p>
+    </section>
+
+    <section id="keynote-speakers">
+        <h2>Keynote Speakers</h2>
+        <p>Details about chief guests.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Contact details or form.</p>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('header ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Auto-slider for patrons
+        const slider = document.getElementById('patrons-slider');
+        const cards = slider.querySelectorAll('.patron-card');
+        let scrollAmount = 0;
+        const cardWidth = cards[0].offsetWidth + 20; // Card width plus margin
+        const totalWidth = cardWidth * cards.length; // Total width of all patron cards
+
+        function autoSlide() {
+            scrollAmount += cardWidth;
+            if (scrollAmount >= totalWidth) {
+                scrollAmount = 0;
+            }
+            slider.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        setInterval(autoSlide, 3000); // Slide every 3 seconds
+    </script>
+</body>
+
+</html>
